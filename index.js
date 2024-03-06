@@ -4,6 +4,9 @@ import { startStandaloneServer } from '@apollo/server/standalone';
 // types
 import { typeDefs } from './typeDefs';
 
+// db
+import db from './_db';
+
 const server = new ApolloServer({
 	typeDefs,
 	resolvers,
