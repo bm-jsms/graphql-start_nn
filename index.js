@@ -7,6 +7,21 @@ import { typeDefs } from './typeDefs';
 // db
 import db from './_db';
 
+// resolvers
+const resolvers = {
+	Query: {
+		games() {
+			return db.games;
+		},
+		reviews() {
+			return db.reviews;
+		},
+		authors() {
+			return db.authors;
+		},
+	},
+};
+
 const server = new ApolloServer({
 	typeDefs,
 	resolvers,
