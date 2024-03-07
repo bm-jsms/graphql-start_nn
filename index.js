@@ -10,15 +10,9 @@ import db from './_db.js';
 // resolvers
 const resolvers = {
 	Query: {
-		games() {
-			return db.games;
-		},
-		reviews() {
-			return db.reviews;
-		},
-		authors() {
-			return db.authors;
-		},
+		games: () => db.games,
+		reviews: () => db.reviews,
+		authors: () => db.authors,
 	},
 };
 
