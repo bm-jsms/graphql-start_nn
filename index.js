@@ -27,7 +27,20 @@ const resolvers = {
 	},
 	Game: {
 		reviews: (parent) => {
-			return db.reviews.filter((review) => review.game_id === parent.id);
+			return db.reviews.filter((r) => r.game_id === parent.id);
+		},
+	},
+	Author: {
+		reviews: (parent) => {
+			return db.reviews.filter((r) => r.author_id === parent.id);
+		},
+	},
+	Review: {
+		game: (parent) => {
+			return db.games.find((g) => g.id === parent.game_id);
+		},
+		review: (parent) => {
+			return db.authors.find((a) => a.id === parent.author_id);
 		},
 	},
 };
