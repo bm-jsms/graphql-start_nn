@@ -49,6 +49,15 @@ const resolvers = {
 
 			return db.games;
 		},
+		addGame: (_, args) => {
+			let game = {
+				...args.game,
+				id: String(db.games.length + 1),
+			};
+			db.games.push(game);
+
+			return game;
+		},
 	},
 };
 
